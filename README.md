@@ -118,6 +118,59 @@ After you gather the cookies, you have several options:
 
 Note: If you choose Option 1 (command-line arguments), you can add the `--save` flag to save them to a `~/.pokestop` file
 
+##API
+
+To start locally:
+
+```
+python api.py --port 8000
+```
+
+You may also deploy to Heroku to set up your own REST API for easy web access to all Pokéstops.
+
+Follow the steps on Heroku's website [here](https://devcenter.heroku.com/articles/git) to deploy.
+
+API info:
+
+| Endpoint  | Notes                                               |
+|-----------|-----------------------------------------------------|
+| /nearby   | Find nearby Pokéstops given a lat/lng               |
+| /pokestop | Get information on a specific Pokéstop given a guid |
+
+All call require `SACSID` and `csrftoken` (can be gathered by following the instructions in the Setup section above).
+
+`/nearby` requires `latitude` and `longitude`
+
+`/pokestop` requires `guid`
+
+Here are all the fields that can be used (same functions/explanations as the Usage section above):
+
+| Field     |
+|-----------|
+| SACSID    |
+| csrftoken |
+| guid      |
+| latitude  |
+| longitude |
+| minimum   |
+| maximum   |
+| order     |
+| limit     |
+
+Example API call:
+
+```
+curl -X POST -H "Content-Type: application/json" -d '{
+    "latitude": "40.758903",
+    "longitude": "-73.985131",
+    "max": "20",
+    "SACSID": "<SACSID cookie>",
+    "csrftoken": "<csrftoken cookie>"
+}' "http://app-name-123.herokuapp.com/nearby"
+```
+
+This will yield the same output as in the Example section above.
+
 ##Disclaimer
 
 These may or may not violate some Terms of Service for Niantic Lab's Ingress and Pokémon GO. Use at your own risk.
