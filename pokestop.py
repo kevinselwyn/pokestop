@@ -192,11 +192,15 @@ class Pokestop(object):
         maxxtile, minytile = self.tile(((lng * 1E6) + 100) / 1E6, ((lat * 1E6) + 100) / 1E6)
         output = []
 
-        if 'minimum' not in self.args:
+        if 'minimum' not in self.args or not self.args['minimum']:
             self.args['minimum'] = 0
+        else:
+            self.args['minimum'] = int(self.args['minimum'])
 
-        if 'maximum' not in self.args:
+        if 'maximum' not in self.args or not self.args['maximum']:
             self.args['maximum'] = 1000
+        else:
+            self.args['maximum'] = int(self.args['maximum'])
 
         for xtile in range(minxtile, maxxtile + 1):
             for ytile in range(minytile, maxytile + 1):
@@ -237,14 +241,18 @@ class Pokestop(object):
                         'compass': compass
                     })
 
-        if 'order' not in self.args:
+        if 'order' not in self.args or not self.args['order']:
             self.args['order'] = 'ASC'
 
-        if 'limit' not in self.args:
+        if 'limit' not in self.args or not self.args['limit']:
             self.args['limit'] = 1000
+        else:
+            self.args['limit'] = int(self.args['limit'])
 
-        if 'offset' not in self.args:
+        if 'offset' not in self.args or not self.args['offset']:
             self.args['offset'] = 0
+        else:
+            self.args['offset'] = int(self.args['offset'])
 
         output.sort(
             key=lambda x: x['distance'],
