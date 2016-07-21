@@ -1,0 +1,7 @@
+{
+	"name": "Pokéstop",
+	"description": "Find nearby Pokéstops",
+	"repository": "https://github.com/kevinselwyn/pokestop",
+	"logo": "https://raw.githubusercontent.com/kevinselwyn/pokestop/master/logo.svg",
+	"keywords": ["python", "flask", "pokemon", "api"]
+}

@@ -128,7 +128,9 @@ python api.py --port 8000
 
 You may also deploy to Heroku to set up your own REST API for easy web access to all Pokéstops.
 
-Follow the steps on Heroku's website [here](https://devcenter.heroku.com/articles/git) to deploy.
+Follow the steps on Heroku's website [here](https://devcenter.heroku.com/articles/git) to deploy or click this button:
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/kevinselwyn/pokestop)
 
 API info:
 
