@@ -84,8 +84,13 @@ class Pokestop(object):
 
         url = '%s/intel' % (DOMAIN)
         request = requests.get(url, headers=self.headers)
+        dashboard = re.findall(r'gen_dashboard_(\w*)\.js', request.text)
 
-        return re.findall(r'gen_dashboard_(\w*)\.js', request.text)[0]
+        if len(dashboard) != 1:
+            self.setup()
+            sys.exit(1)
+
+        return dashboard[0]
 
     def get_headers(self):
         """Assembles the HTTP headers"""
