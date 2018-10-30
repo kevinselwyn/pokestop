@@ -1,8 +1,8 @@
-#pokestop
+# pokestop
 
 Find nearby Pokéstops
 
-##Installation
+## Installation
 
 This utility depends on the Python `requests` library. To install:
 
@@ -10,7 +10,7 @@ This utility depends on the Python `requests` library. To install:
 sudo pip install requests
 ```
 
-##Usage
+## Usage
 
 ```
 usage: python pokestop.py [-h] [--latitude LATITUDE] [--longitude LONGITUDE]
@@ -36,7 +36,7 @@ optional arguments:
   --save                 Save cookies to ~/.pokestop
 ```
 
-##Schema
+## Schema
 
 Results are returned in JSON. Here is the format for a single Pokéstop entity:
 
@@ -55,7 +55,7 @@ Results are returned in JSON. Here is the format for a single Pokéstop entity:
 
 When several entities are returned, they come back in an array of entities.
 
-##Example
+## Example
 
 To find the Pokéstops within 20 meters of the center of Times Square in New York City:
 
@@ -68,29 +68,29 @@ Ouput:
 ```json
 [
     {
-        "distance": 17, 
-        "name": "George M. Cohan Statue at Times Square", 
-        "bearing": 182, 
-        "latitude": 40.758746, 
-        "image": "http://www.panoramio.com/photos/small/24779431.jpg", 
-        "guid": "f51cc4736b2042549a8a9cf086e50d44.12", 
-        "compass": "S", 
+        "distance": 17,
+        "name": "George M. Cohan Statue at Times Square",
+        "bearing": 182,
+        "latitude": 40.758746,
+        "image": "http://www.panoramio.com/photos/small/24779431.jpg",
+        "guid": "f51cc4736b2042549a8a9cf086e50d44.12",
+        "compass": "S",
         "longitude": -73.985138
-    }, 
+    },
     {
-        "distance": 20, 
-        "name": "Francis Patrick Duffy (1871 - 1932)", 
-        "bearing": 43, 
-        "latitude": 40.759055, 
-        "image": "http://www.panoramio.com/photos/small/80872997.jpg", 
-        "guid": "9851cb13578d42f6bfa15c5e6f31919a.12", 
-        "compass": "NE", 
+        "distance": 20,
+        "name": "Francis Patrick Duffy (1871 - 1932)",
+        "bearing": 43,
+        "latitude": 40.759055,
+        "image": "http://www.panoramio.com/photos/small/80872997.jpg",
+        "guid": "9851cb13578d42f6bfa15c5e6f31919a.12",
+        "compass": "NE",
         "longitude": -73.984988
     }
 ]
 ```
 
-##Setup
+## Setup
 
 If not set up correctly, you may get the following alert:
 
@@ -118,7 +118,7 @@ After you gather the cookies, you have several options:
 
 Note: If you choose Option 1 (command-line arguments), you can add the `--save` flag to save them to a `~/.pokestop` file
 
-##API
+## API
 
 To start locally:
 
@@ -173,7 +173,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 This will yield the same output as in the Example section above.
 
-##Disclaimer
+## Disclaimer
 
 These may or may not violate some Terms of Service for Niantic Lab's Ingress and Pokémon GO. Use at your own risk.
 
