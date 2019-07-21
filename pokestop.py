@@ -10,7 +10,7 @@ import re
 import sys
 import requests
 
-DOMAIN = 'https://www.ingress.com'
+DOMAIN = 'https://intel.ingress.com'
 COOKIES = {
     'SACSID': '<SACSID cookie>',
     'csrftoken': '<csrftoken cookie>'
@@ -74,10 +74,10 @@ class Pokestop(object):
     def setup(self):
         """Setup copy"""
 
-        print '\033[91m'
-        print 'Log into %s/intel and copy the following cookies:\n  SACSID\n  csrftoken\n' % (DOMAIN)
-        print 'For more information, visit https://github.com/kevinselwyn/pokestop'
-        print '\033[0m'
+        print('\033[91m')
+        print('Log into %s/intel and copy the following cookies:\n  SACSID\n  csrftoken\n' % (DOMAIN))
+        print('For more information, visit https://github.com/kevinselwyn/pokestop')
+        print('\033[0m')
 
     def get_version(self):
         """Gets the version string"""
@@ -333,9 +333,9 @@ def main():
     pokestop = Pokestop(vars(args))
 
     if args.guid:
-        print pokestop.entity(args.guid)
+        print(pokestop.entity(args.guid))
     else:
-        print pokestop.entities()
+        print(pokestop.entities())
 
 if __name__ == '__main__':
     main()

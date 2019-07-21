@@ -37,16 +37,16 @@ def get_args(variables=None):
 
     parser = reqparse.RequestParser()
 
-    for variable, val in variables.iteritems():
+    for variable, val in variables.items():
         parser.add_argument(variable)
 
     args = parser.parse_args()
     output = {}
 
-    for key, val in args.iteritems():
+    for key, val in args.items():
         output[key] = val
 
-    for key, val in variables.iteritems():
+    for key, val in variables.items():
         if not key in output or not output[key]:
             output[key] = val
 
@@ -67,7 +67,9 @@ API = Api(APP)
 #----------------------------------------------------------------#
 # Errors
 
-APP.error_handler_spec[None][404] = lambda x: custom_error(404, 'Invalid endpoint')
+@APP.errorhandler(404)
+def page_not_found(error):
+    return custom_error(404, 'Invalid endpoint')
 
 #----------------------------------------------------------------#
 # Nearby
